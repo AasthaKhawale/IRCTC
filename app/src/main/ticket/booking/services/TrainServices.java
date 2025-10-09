@@ -29,7 +29,9 @@ public class TrainServices {
     }
 
     public List<Train> searchTrains(String source,String destination){
-        return  trainList.stream().filter(train -> validTrain(train, source,destination)).collect(Collector.toList));
+        return trainList.stream()
+                .filter(train -> validTrain(train, source, destination))
+                .collect(Collectors.toList());
     }
 
     private boolean validTrain(Train train, String source,String destination){
